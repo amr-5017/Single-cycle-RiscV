@@ -8,6 +8,19 @@ This repository contains the complete implementation of a single-cycle RISC-V pr
 - Single-cycle architecture for straightforward design and understanding.
 - Open-source project with **no license required** for usage.
 
+## Feature Status
+
+| Feature      | Completion Status | Testing Status |
+|--------------|-------------------|----------------|
+| R-type       | ✅               | ❌             |
+| I-type       | ✅               | ❌             |
+| S-type       | ✅               | ❌             |
+| B-type       | ✅               | ❌             |
+| J-type       | ✅               | ❌             |
+| U-type       | ✅               | ❌             |
+| M-type       | ✅               | ❌             |
+| Pipeline     | ❌               | ❌             |
+
 ## Usage
 
 Feel free to use, modify, and integrate this code into your projects without restrictions. Contributions and feedback are always welcome!
