@@ -8,6 +8,10 @@ This repository contains the complete implementation of a single-cycle RISC-V pr
 - Single-cycle architecture for straightforward design and understanding.
 - Open-source project with **no license required** for usage.
 
+## RTL Design
+You can view the detailed RTL design of the RV32IM core in the following document:
+RTL of RV32IM ["https://github.com/amr-5017/Single-cycle-RiscV/blob/main/RTL_RV32IM.pdf"]
+
 ## Feature Status
 
 | Feature      | Completion Status | Testing Status |
