@@ -7,7 +7,7 @@ reg [7:0]mem[0:2048];
 
 initial 
 begin
-$readmemh("C:/Users/Lenovo/OneDrive/Desktop/single_cycle_riscv/memory.data", mem);
+$readmemh("C:/Users/DELL/Desktop/single_cycle_riscv/memory.data", mem);
 end
 
 
@@ -22,10 +22,9 @@ if(mem_by_in == 2'b10)  //half
 if(mem_by_in == 2'b11)  //word
 {mem[alu_out+3],mem[alu_out+2],mem[alu_out+1],mem_out[alu_out]}<= data_in;
 end
-end
 
 
-always_comb
+if(mem_read)
 begin
 mem_out = 0;
 case(mem_by_in)
@@ -35,9 +34,10 @@ mem_out = mem_read? {24'b0,mem[alu_out]}:0;
 mem_out = mem_read? {16'b0,mem[alu_out+1],mem[alu_out]}:0;
 2'b11:  //word
 mem_out = mem_read? {mem[alu_out+3],mem[alu_out+2],mem[alu_out+1],mem[alu_out]}:0;
-
 default:
 mem_out = 0;
 endcase
 end
+end
+
 endmodule
