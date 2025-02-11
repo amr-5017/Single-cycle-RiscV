@@ -17,12 +17,6 @@ always_comb
 begin
 zero = 0;      // Default zero flag to 0
 alu_out = 0;   // Default ALU output to 0
-
-always_comb
-begin
-
-zero = 0;
-alu_out = 0;
 case(alu_control)
        4'b0000:   //R-Type  //add + load + store + addi //Mul 
        begin
