@@ -5,6 +5,6 @@ module mux21
     output logic [31:0] y
 );
 
-    assign y = control ? b : a;
+    assign y = control ? b : a;       // selects between the branch address or pc+4 address
 
 endmodule
