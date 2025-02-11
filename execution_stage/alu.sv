@@ -1,16 +1,22 @@
 module alu(alu_control,alu_out,zero,rs1_data,rs2_data,fn3,fn7_1);
-input logic [3:0]alu_control;
-input logic [2:0]fn3;
-input logic fn7_1;
-output logic zero;
-output logic [31:0]alu_out;
-input logic [31:0]rs1_data,rs2_data;
-logic [63:0]alu_bus;
-wire signed [31:0]rss1_data,rss2_data;
+input logic [3:0]alu_control; // 4-bit control signal to select ALU operation
+input logic [2:0]fn3;         // 3-bit function code from instruction (RISC-V funct3)
+input logic fn7_1;            // 1-bit signal from funct7 (used for multiplication)
+output logic zero;            // Output flag, set to 1 for branch conditions
+output logic [31:0]alu_out;   // 32-bit ALU result
+input logic [31:0]rs1_data,rs2_data; // 32-bit input operands from registers
 
+logic [63:0]alu_bus;          // 64-bit bus to hold multiplication results
+       wire signed [31:0]rss1_data,rss2_data; // variables for signed of input operands
 
+// Assign signed values to input operands for signed operations
 assign rss1_data = signed'(rs1_data);
 assign rss2_data = signed'(rs2_data);
+
+always_comb
+begin
+zero = 0;      // Default zero flag to 0
+alu_out = 0;   // Default ALU output to 0
 
 always_comb
 begin
