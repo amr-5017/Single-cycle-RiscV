@@ -28,6 +28,7 @@ RTL of RV32IM ["https://github.com/amr-5017/Single-cycle-RiscV/blob/main/RTL_RV3
 ## Usage
 
 Feel free to use, modify, and integrate this code into your projects without restrictions. Contributions and feedback are always welcome!
+The uploaded RISCV card here is the reference used to design the micro-arhitecture.
 
 ---
 
