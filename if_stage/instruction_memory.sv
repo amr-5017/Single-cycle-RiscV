@@ -7,6 +7,7 @@ initial begin
   end
   
 //inst = mem[addr];
-    assign inst = {mem[addr+3], mem[addr+2], mem[addr+1], mem[addr]};
+    assign inst = {mem[addr+3], mem[addr+2], mem[addr+1], mem[addr]};  // Reads 4 consecutive bytes from memory and combines them into a 32-bit instruction.
+                                                                       // Byte ordering follows the little-endian format (LSB at lowest address, MSB at highest).
 
 endmodule
