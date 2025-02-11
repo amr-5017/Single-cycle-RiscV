@@ -27,8 +27,9 @@ RTL of RV32IM ["https://github.com/amr-5017/Single-cycle-RiscV/blob/main/RTL_RV3
 
 ## Usage
 
-Feel free to use, modify, and integrate this code into your projects without restrictions. Contributions and feedback are always welcome!
-The uploaded RISCV card here is the reference used to design the micro-arhitecture.
+1. Feel free to use, modify, and integrate this code into your projects without restrictions. Contributions and feedback are always welcome!
+2. The uploaded RISCV card here is the reference used to design the micro-arhitecture.
+3. Program.data and memory.data file contains values of instruction and data memory respectively.
 
 ---
 
