@@ -23,24 +23,21 @@ register[11] = 32'd11;
 register[12] = 32'd12;
 end
 end
+always @(*) begin  
+    if (rs1_addr != 0)  
+        rs1_data <= register[rs1_addr];  
+    else  
+        rs1_data <= 0; // Read from rs1 register unless rs1_addr is zero, in which case return 0 (RISC-V convention).  
+    if (rs2_addr != 0)  
+        rs2_data <= register[rs2_addr];  
+    else  
+        rs2_data <= 0;  // Read from rs2 register unless rs2_addr is zero, in which case return 0.  
+end  
 
-
- always @(*) begin
-        if(rs1_addr!=0)
-        rs1_data<= register[rs1_addr];
-        else
-        rs1_data<=0;
-        
-        if(rs2_addr!=0)
-        rs2_data<=register[rs2_addr];
-        else
-        rs2_data<=0;
-        end
-
-always @(*)
-    begin
-        if (reg_write && rd_addr != 5'b00000) begin // Don't write to register zero
-            register[rd_addr]<= wb_data;
-        end
-    end
-endmodule
+always @(*) begin  
+    if (reg_write && rd_addr != 5'b00000) // Write data to the register only if reg_write is enabled and the destination is not register zero (x0).
+     begin            
+        register[rd_addr] <= wb_data;  
+    end  
+end   
+endmodule 
