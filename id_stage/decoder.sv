@@ -9,16 +9,16 @@ output logic fn7_5,fn7_1;
 
 always_comb
 begin
-rd = 0;
-fn3 = 0;
-rs1 = 0;
-rs2 = 0;
-imm = 0;
-imm_uj = 0;
+rd = 0;            //rd = destination register 
+fn3 = 0;           //fn3 = This field identifies the operation under a class of instruction
+rs1 = 0;           // rs1 = source register 1 
+rs2 = 0;           // rs2 = source register 2 
+imm = 0;           // immediate 12-bit value
+imm_uj = 0;        //immediate 20-bit value
 imm11_5 = 0;
 fn7_5 = 0;
 fn7_1 = 0;
-opcode = if_out[6:0];
+opcode = if_out[6:0];    //This field identifies class/basic operation of Instructions like, LOAD, STORE, OP-Immediate type, OP- register type, Branch 
 
 case(opcode)
     7'b0110011: //R-Type and M-Type
