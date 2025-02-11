@@ -1,3 +1,5 @@
+//All submodules are instantiated in the top module for the ID stage.
+
 module id_stage(if_out,rs1_data,rs2_data,imm_out,reg_write,wb_data,opcode_out_d,fn3_out_d,fn7_5,imm11_5,fn7_1);
 input logic [31:0]if_out,wb_data;
 input logic reg_write;
