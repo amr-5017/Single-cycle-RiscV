@@ -1,3 +1,5 @@
+//All submodules are instantiated in the top module i.e IF stage.
+
 module if_stage #(parameter N=32)
 (
     input logic clk, and_out, reset, 
