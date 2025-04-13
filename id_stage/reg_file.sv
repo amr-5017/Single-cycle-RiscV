@@ -7,7 +7,6 @@ module reg_file(
 );
 
     logic [31:0] register [31:0];
-    logic [31:0] en;
 
     always_comb begin
         rs1_data = register[rs1_sel];
@@ -23,8 +22,8 @@ module reg_file(
         end else begin
             for (i = 0; i < 32; i++) begin
            
-                if (out[i] & reg_write)
-                    register[i] <=  wb_data;
+                if (reg_write!=0)
+                    register[reg_write] <=  wb_data;
             end
         end
     end
