@@ -40,7 +40,7 @@ RTL of RV32IM ["(https://github.com/amr-5017/Single-cycle-RiscV/blob/main/RTL_RV
 2.  The uploaded RISC-V card here is the reference used to design the micro-architecture.
 3.  The `Program.data` and `memory.data` files contain the values for the instruction and data memory, respectively.
 4.  **Important Note:** The provided code for memories and registers is written **combinationally**. This is done purely for the sake of behavioral simulation and is **not the actual sequential hardware implementation**.
-
+ 
 ---
 
 ### Contributions
